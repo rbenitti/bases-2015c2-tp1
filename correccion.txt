@@ -1,0 +1,82 @@
+﻿Principalmente registrar los accidentes
+
+
+	Quien manejaba el vehiculo?
+
+	Quien acompañanaba?
+
+	Quien hizo el peritaje?
+
+	Las victimas?
+
+	Testigos
+
+	Lugar
+
+
+ 
+to_do:
+	
++ Renombrar Via por otro. Region/Lugar
+	
++ Elminar Patente. Reemplazar por atributo de Vehiculo
+	
+- Peritaje:
+		
+	- Fecha
+		
+	- Quien lo hizo(Legajo del agente)
+		
+	- Resultado del peritaje
+	
++ Denuncia(Atributo compuesto de Siniestro)
+		
+	+ Fecha 
+		
+	+ Donde se hizo(Comisaría)
+		
+	- Quién la hizo 
+	
+- No complicarse con los atributos de ruta:
+		
+	- Agregar velocidades maximas en cada lugar
+		
+	- Toda asfaltada o no
+	
+- Set de datos:
+		
+	- 5 o 6 casos
+		
+- Triggers para chequear consistencia
+	
+- Fijarnos si la tabla quedó en 3ra forma normal
+	
+- Agregar los accidentados
+
+
+
+- Asumpciones:
+	
+	- Siempre hay un conductor por accidente
+	
+	- Especializacion disjunta de persona
+		
+	- Victima/Accidentado
+		
+	- Testigo
+		
+	- Conductor
+	
+	- Siempre hay una denuncia policial
+		
+	- Acompañante
+ 		
+	- Pasajero
+		(Aportaria claridad)
+		
+- Todos los que manejan tienen licencia
+	- 
+- Los accidentados no pueden ser testigos
+	
+- El testigo no puede estar involucrado en el accidente
+	
