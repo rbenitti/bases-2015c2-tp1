@@ -16,7 +16,7 @@ drop table Modalidad;
 */
 
 /*
-Lugar(idLugar, nombre, tipoPavimento, longitud, velocidaMaxima)
+Lugar(idLugar, nombre, tipoPavimento, longitud, velocidaMaxima, tipo)
 PK = CK = {idLugar}
 */
 CREATE TABLE Lugar
@@ -26,6 +26,7 @@ CREATE TABLE Lugar
 	tipoPavimento varchar(256), 
 	longitud	int, 
 	velocidaMaxima int,
+	tipo		varchar(16),
 	PRIMARY KEY (idLugar)
 );
 
@@ -116,7 +117,8 @@ CREATE TABLE Accidente
 	oficial			varchar(256),
 	idModalidad     int,
 	PRIMARY KEY (idAccidente), 
-	FOREIGN KEY (idLugar) REFERENCES Lugar(idLugar)
+	FOREIGN KEY (idLugar) REFERENCES Lugar(idLugar),
+	FOREIGN KEY (idModalidad) REFERENCES Modalidad(idModalidad)
 );
 
 /*
@@ -256,12 +258,12 @@ from sys.tables t
 */
 
 INSERT INTO Lugar(  idLugar, nombre, tipoPavimento, longitud, velocidaMaxima ) VALUES
-(1,'Ruta N40', 'ripio', 4500000, 30), 
-(2,'Avenida 9 de Julio', 'asfalto', 3600, 60), 
-(3,'Junin', 'asfalto', 4000, 40), 
-(4,'Avenida 9 de Julio', 'asfalto', 1900, 40), 
-(5,'Yapeyu', 'asfalto', 800, 40), 
-(6,'Ruta N4', 'asfalto', 4500, 30)
+(1,'Ruta N40', 'ripio', 4500000, 30, 'ruta'), 
+(2,'Avenida 9 de Julio', 'asfalto', 3600, 60, 'calle'), 
+(3,'Junin', 'asfalto', 4000, 40,'calle'), 
+(4,'Avenida 9 de Julio', 'asfalto', 1900, 40,'calle'), 
+(5,'Yapeyu', 'asfalto', 800, 40,'calle'), 
+(6,'Ruta N4', 'asfalto', 4500, 30, 'ruta')
 ;
 INSERT INTO Calle(  idLugar, provincia, ciudad ) VALUES 
 (2, 'Capital Federal', 'Capital Federal'),
