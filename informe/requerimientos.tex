@@ -1,0 +1,102 @@
+En primer lugar realizamos un relevamiento de los requerimientos, lo cual nos permitió separar los objetivos del sistema en categorías generales. El paso posterior
+fue dividir cada una de estar categorías principales en objetivos más peque\~nos. Este diagrama nos permite identificar las funcionalidades que debe tener nuestro 
+sistema de manera resumida.
+
+\begin{enumerate}
+	\item{Mantener información general sobre las infracciones y los siniestros ocurridos en el sistema de tránsito:}
+		\begin{enumerate}
+			\item Conductores
+			\item Modalidad del siniestro
+				\begin{enumerate}
+					\item Atropello
+					\item Vuelco
+					\item Incendio
+					\item Choque
+				\end{enumerate}
+		\end{enumerate}
+	\item{Mantener información particular sobre los accidentes}
+		\begin{enumerate}
+			\item Mantener información sobre la fecha y hora del siniestro
+			\item Mantener información sobre la ubicación del siniestro
+			\item{Mantener información sobre las personas involucradas en el siniestro. Diferenciar roles de las mismas en relación al accidente:}
+				\begin{enumerate}
+					\item Conductor
+					\item Acompa\~nante
+					\item Tercero accidentado
+					\item Testigo
+				\end{enumerate}
+			\item Mantener información sobre la denuncia policial
+				\begin{enumerate}
+					\item Fecha de la denuncia
+					\item Comisaría en donde se realizó la denuncia
+					\item Oficial que elevó la denuncia
+				\end{enumerate}
+			\item Mantener información sobre los peritajes
+				\begin{enumerate}
+					\item Información general del reporte
+						\begin{enumerate}
+							\item Fecha
+							\item Perito responsable
+						\end{enumerate}
+					\item Motivo del peritaje
+						\begin{enumerate}
+							\item Causa probable o presunta del accidente
+							\item Sobre qué pavimento se produjo
+							\item ¿Las víctimas usaban cinturón?
+							\item Estado y condiciones de la vía
+							\item Estado de iluminación
+							\item Condiciones climáticas
+							\item ¿Se contaba con elementos de seguridad?
+						\end{enumerate}
+				\end{enumerate}
+		\end{enumerate}
+	\item{Mantener información general sobre los lugares}
+		\begin{enumerate}
+			\item Tipo de lugar
+				\begin{enumerate}
+					\item Ruta
+						\begin{enumerate}
+							\item Nacional
+							\item Provincial
+						\end{enumerate}
+					\item Calle
+						\begin{enumerate}
+							\item Provincia
+							\item Ciudad
+						\end{enumerate}
+				\end{enumerate}	
+			\item Tipo de asfalto
+				\begin{enumerate}
+					\item Asfalto
+					\item Cemento
+					\item Ripio
+					\item Tierra
+				\end{enumerate}
+			\item Longitud
+			\item Nombre
+			\item Velocidad máxima permitida
+		\end{enumerate}
+	\item{Mantener información sobre el parque automotor}
+		\begin{enumerate}
+			\item Modelo
+			\item Antigüedad
+			\item Aseguradora
+			\item Tipo de cobertura
+			\item Categoría 
+				\begin{enumerate}
+					\item Alta
+					\item Media
+					\item Baja
+				\end{enumerate}
+			\item{Utilitario}
+			\item Conductores habilitados
+		\end{enumerate}
+	\item{Mantener información general sobre los conductores}
+		\item Información de la Licencia
+			\begin{enumerate}
+				\item Fecha de otorgamiento
+				\item Fecha de caducidad
+				\item Para qué tipo de vehículo
+			\end{enumerate}
+		\item DNI de los conductores
+\end{enumerate}
