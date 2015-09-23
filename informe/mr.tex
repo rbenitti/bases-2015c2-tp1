@@ -1,0 +1,94 @@
+\section{Modelo Relacional}
+
+\begin{itemize}
+
+\item Lugar(\underline{idLugar}, nombre, tipoPavimento, longitud, velocidaMaxima, tipo)
+  \begin{itemize}
+  \item[] PK = CK = \{idLugar\}
+  \end{itemize}
+
+
+\item Calle(\underline{idLugar}, provincia, ciudad)
+  \begin{itemize}
+  \item[] PK = CK = FK =\{idLugar\}
+  \end{itemize}
+
+
+\item Ruta(\underline{idLugar}, esNacional)
+  \begin{itemize}
+  \item[] PK = CK = FK =\{idLugar\}
+  \end{itemize}
+
+
+\item Persona(\underline{dni}, nombre, apellido, nacionalidad, fechaNacimiento, domicilio, licencia)
+  \begin{itemize}
+  \item[] PK = \{dni\}
+  \item[] CK = \{dni, licencia\}
+  \end{itemize}
+
+
+\item Vehiculo(\underline{patente}, anio, categoria, titular, aseguradora, tipoCobertura, vigenciaSeguro)
+\begin{itemize}
+  \item[] PK = CK = \{patente\}
+  \item[] FK = \{dniDuenio\}
+  \end{itemize}
+
+
+\item Modalidad(\underline{idModalidad}, descripcion)
+  \begin{itemize}
+  \item[] PK = CK = \{idModalidad\}
+  \end{itemize}
+
+
+\item Accidente(\underline{idAccidente}, fecha, idLugar, altura, fechaDenuncia, comisaria, oficial, idModalidad)
+  \begin{itemize}
+  \item[] PK = CK = \{idAccidente\}
+  \item[] FK = \{idLugar, idModalida\}
+  \end{itemize}
+
+\item Infraccion(\underline{idInfraccion}, fecha, idLugar, altura, tipo, oficial)
+  \begin{itemize}
+  \item[] PK = CK = \{idInfraccion\}
+  \item[] FK = \{idLugar\}
+  \end{itemize}
+
+\item Licencia(\underline{numero}, \underline{dni}, clases, otorgamiento, vencimiento)
+  \begin{itemize}
+  \item[] PK = CK = \{numero, dni\}
+  \item[] FK = \{dni\}
+  \end{itemize}
+
+\item HabilitacionConduccion(\underline{dni} , patente)
+  \begin{itemize}
+  \item[] PK = CK = \{(dni, patente)\}
+  \item[] FK = \{dni, patente\}
+  \end{itemize}
+
+\item Testigo(\underline{idAccidente}, dni)
+  \begin{itemize}
+  \item[] PK = CK = \{(idAccidente, dni)\}
+  \item[] FK = \{idAccidente, dni\}
+  \end{itemize}
+
+\item InfraccionVehiculoPersona(\underline{idInfraccion}, \underline{dni}, patente)
+  \begin{itemize}
+  \item[] CK = \{(idInfraccion, dni), (idInfraccion, patente)\}
+  \item[] PK = \{(idInfraccion, dni)\}
+  \item[] FK = \{idInfraccion, dni, patente\}
+  \end{itemize}
+
+\item AccidenteVehiculoPersona(\underline{idAccidente}, \underline{dni}, patente)
+  \begin{itemize}
+  \item[] PK = \{(idAccidente, dni), (idAccidente, patente)\}
+  \item[] PK = \{(idAccidente, dni)\}
+  \item[] FK = \{idAccidente, dni, patente\}
+  \end{itemize}
+
+
+\item Peritaje(\underline{idPeritaje}, \underline{idAccidente}, perito, fecha, motivo, resultado)
+  \begin{itemize}
+  \item[] PK = CK = \{idPeritaje, idAccidente\}
+  \item[] FK = \{idAccidente\}
+  \end{itemize}
+
+\end{itemize}
