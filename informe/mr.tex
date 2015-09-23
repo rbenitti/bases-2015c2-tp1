@@ -27,7 +27,7 @@
   \end{itemize}
 
 
-\item Vehiculo(\underline{patente}, anio, categoria, titular, aseguradora, tipoCobertura, vigenciaSeguro)
+\item Vehiculo(\underline{patente}, anio, tipo, marca, modelo, categoria, titular, aseguradora, tipoCobertura, vigenciaSeguro)
 \begin{itemize}
   \item[] PK = CK = \{patente\}
   \item[] FK = \{dniDuenio\}
@@ -43,19 +43,13 @@
 \item Accidente(\underline{idAccidente}, fecha, idLugar, altura, fechaDenuncia, comisaria, oficial, idModalidad)
   \begin{itemize}
   \item[] PK = CK = \{idAccidente\}
-  \item[] FK = \{idLugar, idModalida\}
+  \item[] FK = \{idLugar, idModalidad\}
   \end{itemize}
 
 \item Infraccion(\underline{idInfraccion}, fecha, idLugar, altura, tipo, oficial)
   \begin{itemize}
   \item[] PK = CK = \{idInfraccion\}
   \item[] FK = \{idLugar\}
-  \end{itemize}
-
-\item Licencia(\underline{numero}, \underline{dni}, clases, otorgamiento, vencimiento)
-  \begin{itemize}
-  \item[] PK = CK = \{numero, dni\}
-  \item[] FK = \{dni\}
   \end{itemize}
 
 \item HabilitacionConduccion(\underline{dni} , patente)
@@ -77,7 +71,7 @@
   \item[] FK = \{idInfraccion, dni, patente\}
   \end{itemize}
 
-\item AccidenteVehiculoPersona(\underline{idAccidente}, \underline{dni}, patente)
+\item AccidenteVehiculoPersona(\underline{idAccidente}, \underline{dni}, patente, rolPersona)
   \begin{itemize}
   \item[] PK = \{(idAccidente, dni), (idAccidente, patente)\}
   \item[] PK = \{(idAccidente, dni)\}
