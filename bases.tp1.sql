@@ -71,7 +71,7 @@ CREATE TABLE Persona
 );
 
 /*
-Vehiculo(patente, anio, gama, categoria, titular, aseguradora, tipoCobertura, vigenciaSeguro)
+Vehiculo(patente, anio, categoria, titular, aseguradora, tipoCobertura, vigenciaSeguro)
 PK = CK = {patente}
 FK = {dniDuenio}
 */
@@ -81,8 +81,7 @@ CREATE TABLE Vehiculo
     marca           VARCHAR(48), 
     modelo          VARCHAR(48), 
 	anio			smallint,
-	gama			varchar(128),
-	tipo		    varchar(128),
+	categoria	    varchar(128),
 	titular 		int, /*dniPersona*/
 	aseguradora		varchar(128),
 	tipoCobertura	varchar(128),
@@ -304,12 +303,12 @@ INSERT INTO Modalidad (idModalidad, descripcion) VALUES
 ;
 
 
-INSERT INTO Vehiculo(  patente, marca, modelo, anio, gama, tipo, titular ,aseguradora, tipoCobertura, vigenciaSeguro) VALUES 
-('CJK165', 'Peugeot', '306', 2006, 'media', 'automovil', 24511187,  'La Caja', 'Todo Total', '20160701' ),
-('AAA456', 'Ford', 'Mondeo', 2006, 'alta', 'automovil', 95789111,  'La Caja', 'Terceros Completo con Granizo', '20160701' ),
-('RWE951', 'Ford', 'F100', 1984, 'media', 'camioneta', 24511187,  'La Caja', 'Responsabilidad Civil', '20160701' ),
-('TKL111', 'Citroen', '3CV', 1972, 'media', 'automovil', 34655298,  'La Caja', 'Terceros Completo con Granizo', '20160701' ),
-('EEE245', 'Toyota', 'Corola', 2010, 'alta', 'automovil', 47111111,  'La Caja', 'Responsabilidad Civil', '20160701' )
+INSERT INTO Vehiculo(  patente, marca, modelo, anio, categoria, titular ,aseguradora, tipoCobertura, vigenciaSeguro) VALUES 
+('CJK165', 'Peugeot', '306', 2006, 'sedan gama media', 24511187,  'La Caja', 'Todo Total', '20160701' ),
+('AAA456', 'Ford', 'Mondeo', 2006, 'sedan gama alta', 95789111,  'La Caja', 'Terceros Completo con Granizo', '20160701' ),
+('RWE951', 'Ford', 'F100', 1984, 'camioneta', 24511187,  'La Caja', 'Responsabilidad Civil', '20160701' ),
+('TKL111', 'Citroen', '3CV', 1972, 'sedan gama media', 34655298,  'La Caja', 'Terceros Completo con Granizo', '20160701' ),
+('EEE245', 'Toyota', 'Corola', 2010, 'sedan gama alta', 47111111,  'La Caja', 'Responsabilidad Civil', '20160701' )
 ;
 
 INSERT INTO HabilitacionConduccion(  dni, patente ) VALUES 
