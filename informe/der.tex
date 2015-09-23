@@ -30,6 +30,7 @@ los atributos más relevantes.
 \subsection{DER completo}
 El diagrama completo fue separado en varias partes para facilitar su lectura.
 
+\newpage
 \begin{figure}
   \begin{center}
     \includegraphics[scale=0.80]{diagramas/2-1.pdf}
@@ -37,6 +38,7 @@ El diagrama completo fue separado en varias partes para facilitar su lectura.
   \end{center}
 \end{figure}
 
+\newpage
 \begin{figure}
   \begin{center}
     \includegraphics[scale=0.8]{diagramas/2-2.pdf}
@@ -44,6 +46,7 @@ El diagrama completo fue separado en varias partes para facilitar su lectura.
   \end{center}
 \end{figure}
 
+\newpage
 \begin{figure}
   \begin{center}
     \includegraphics[scale=0.6]{diagramas/2-3.pdf}
@@ -51,6 +54,40 @@ El diagrama completo fue separado en varias partes para facilitar su lectura.
   \end{center}
 \end{figure}
 
+\newpage
+\subsection{Reestricciones en lenguaje natural}
+
+Cuestiones de notación: Cuando decimos que una entidad ''tiene'' un atributo, nos referimos a que dicho campo no puede ser \textbf{Null}.
+
+\begin{enumerate}
+  \item \textbf{Involucra_a:}
+  \begin{enumerate}
+    \item \textbf{Alguien manejaba y es único:} Dados un accidente y un vehículo involucrados en un accidente, existe una \underline{única} persona que manejaba ese vehículo en dicho accidente. Es decir, que tiene rol de conductor.
+    \item \textbf{Conductores no son acompa\~nantes:} Las personas con rol de acompañante para un vehículo y un accidente no pueden estar involucrados como conductores de dicho vehículo en dicho accidente.
+    \item \textbf{Conductores tienen licencia:} Las personas con rol de conductor de un vehículo en un accidente tienen licencia que les permite conducir ese vehículo.
+    \item \textbf{Pasajeros no son testigos:} Las personas que están involucradas en un accidente y un vehículo no pueden ser testigos de los mismos.
+    \item \textbf{Terceros afectados:} Los terceros afectados por un vehículo en un accidente no pueden ser conductores ni acompañantes en el mismo accidente.
+    \item \textbf{Conductores tienen habilitación para conducir:} Si una persona conducía el vehículo en una accidente, entonces tiene habilitación para conducir ese vehículo.
+  \end{enumerate}
+  \item \textbf{Vehículo:}
+    \begin{enumerate}
+      \item \textbf{Tienen patente:} Todos los vehículos tienen patente, y ésta es única.
+    \end{enumerate}
+  \item \textbf{Peritaje:}
+    \begin{enumerate}
+      \item \textbf{Tienen motivo:} Los peritajes tienen descripción.
+      \item \textbf{Tienen resultado:} Los peritajes tienen resultado.
+      \item \textbf{Tienen fecha:} Los peritajes tienen fecha posterior a la del accidente.
+      \item \textbf{Tienen perito:} Los peritajes son realizados por algún perito.
+    \end{enumerate}
+  \item \textbf{Denuncia:}
+    \begin{enumerate}
+      \item \textbf{Tienen denuncia:} Todos los accidentes tienen denuncia policial.
+      \item \textbf{Denunciado en comisaría:} Las denuncias son hechas en una comisaría.
+      \item \textbf{Realizada en una fecha específica:} Las denuncias son realizadas en una fecha. Ademàs, la fecha de la denuncia es igual o posterior a la fecha del accidente.
+      \item \textbf{Acta labrada por un oficial:} El acta de las denuncias es labrada por un oficial.
+    \end{enumerate}
+\end{enumerate}
 
 
 
