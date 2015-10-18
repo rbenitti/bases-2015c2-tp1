@@ -389,6 +389,12 @@ VALUES (97899,54879213, 'Tentativa de evasion impositiva', 'Procesado')
 ;
 GO
 
+SP: AccidentesPorLicencia
+Parámetros: 
+    licencia: int 
+Devuelve los detalles de los accidentes en los que estuvo involucrada de alguna manera
+la persona a la que corresponde la licencia parámetro.
+
 IF EXISTS (SELECT 1 FROM sys.procedures where name = 'AccidentesPorLicencia')
     DROP PROCEDURE AccidentesPorLicencia
 GO
@@ -423,6 +429,10 @@ BEGIN
 END
 GO
 
+Vista: SumarioAccidentes
+Cantidad de accidentes en los que participaron las personas cargadas en el 
+sistema (identificadas por su licencia), agrupado por tipo de accidente.
+
 IF EXISTS (SELECT 1 FROM sys.views where name = 'SumarioAccidentes')
     DROP VIEW SumarioAccidentes
 GO
@@ -438,11 +448,19 @@ CREATE VIEW SumarioAccidentes AS
     GROUP BY p.numeroLic, m.descripcion
 GO
 
+Debe mostrar los datos de los accidentes en los que participo el conductor con licencia 11445123
+
 EXEC AccidentesPorLicencia 11445123
 Go
 
+Debe mostrar las licencia que participaron en choques frontales (junto con la cantidad de accidentes de tal 
+tipo por cada licencia)
+
 SELECT * FROM SumarioAccidentes where modalidad = 'choque frontal'
 GO
+
+Accidentes por tipo de vehiculo
+Debe listar la cantidad de accidentes por tipo de vehiculo
 
 SELECT v.tipo, COUNT(1) AS Cantidad
 FROM AccidenteVehiculoPersona avp
